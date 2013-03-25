@@ -1,0 +1,2 @@
+module LostfoundspaceHelper
+end

@@ -1,0 +1,125 @@
+@import 'compass'
+@import 'compass_twitter_bootstrap'
+@import 'compass/reset'
+
+$column-gutter: 1em
+
+html
+  width: 1024px
+  height: 768px
+  -webkit-font-smoothing: antialiased
+  font-weight: 300
+  color: #e2e2e2 
+
+body
+  background-color: gray
+  font-family: "museo-sans-1","museo-sans-2"
+
+slides, .sidebar
+  display: block
+  margin: 1em 0 0 0
+  position: relative
+  width: 5000px
+  left: 277px
+
+.sidebar
+  display: none
+
+slide
+  display: inline-block
+  position: relative
+  float: left
+  margin: 10px 
+  top: 144px
+  background-color: #099C9B
+  padding: 0px 15px
+  width: 450px
+  height: 300px
+  +border-radius(10px)
+  +box-shadow(5px 5px 5px #2E2E2E)
+  +opacity(0.5)
+
+  h1
+    font-size: 16px
+    margin-top: 10px
+    font-weight: 700
+
+  h2
+    color: white 
+    font-weight: 500
+    font-size: 12px
+    margin-bottom: 2em
+
+  textarea
+    display: none
+    position: absolute
+    top: 70%
+    width: 90%
+    height: 20%
+  a
+    +unstyled-link
+    color: #2E2E2E
+
+  .content
+    position: absolute
+    top: 35%
+    bottom: 50%
+    width: 92%
+  
+  .edit-button
+    position: absolute
+    left: 95%
+    bottom: 2%
+
+
+  p
+    font-size: 14px
+    text-align: center
+    font-weight: 300
+    font-style: normal
+
+    em
+      color: white 
+
+    span
+      font-style: normal
+      color: #676767
+
+  &.current
+    +opacity(0.9)
+
+  &.large
+    p
+      font-size: 18px
+    .content
+      top: 40%
+      bottom: 40%
+
+  &.solo
+    height: 600px
+    width: 800px
+    padding: 1em 2em 1em 2em
+
+    h1 
+      font-size: 28px
+
+    h2
+      font-size: 20px
+      margin-bottom: 4em
+
+    p
+      font-size: 24px
+
+
+  &.green
+    background-color: #0D7F7E
+
+  &.blue
+    background-color: #0D7F7E
+
+input, textarea
+  display: block
+  width: 97%
+
+textarea
+  height: 300px

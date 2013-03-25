@@ -1,0 +1,11 @@
+%div{'ng-controller' => 'SlideListCtrl'}
+  %slides
+    %slide{'ng-repeat' => 'slide in slides', 'ng-click' => "setCurrentSlide(slide)", 'class' => '{{ slide.currentSlide }}' }
+  
+  %div#myModal.modal.hide.fade{tabindex: "-1", role: "dialog", "data-backdrop" => "true"}
+    %div.modal-header
+      %input{type: "text", "ng-model" => "currentSlide.title"}
+      %input{type: "text", "ng-model" => "currentSlide.subtitle"}
+    %div.modal-body
+      %textarea{type:"text", "ng-model" => "currentSlide.content"}
+      %a.btn{ "ng-click" => "saveCurrentSlide(currentSlide)" } Update
