@@ -27,10 +27,10 @@ app.directive "slides", ->
   restrict: 'E'
 
   link: (scope, element) ->
-    # element.bind "click", ->
-    #   newLeft = parseInt(element.css('left')) - 500
-    #   element.animate({'left': newLeft})
-    #   scope.nextSlide()
+    element.bind "dblclick", ->
+      newLeft = parseInt(element.css('left')) - 500
+      element.animate({'left': newLeft})
+      scope.nextSlide()
 
 app.directive "slide", ->
   restrict: 'E'
