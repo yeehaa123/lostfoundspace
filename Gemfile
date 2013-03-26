@@ -17,6 +17,7 @@ group :assets do
   gem 'compass-rails'
   gem 'uglifier', '>= 1.0.3'
   gem 'angularjs-rails'
+  gem 'lodash-rails'
 end
 
 gem 'jquery-rails'

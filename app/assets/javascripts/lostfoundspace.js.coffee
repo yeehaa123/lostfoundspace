@@ -25,6 +25,7 @@ services.factory "Slide", ($resource) ->
 
 app.directive "slides", ->
   restrict: 'E'
+  templateUrl: 'assets/slides.html'
 
   link: (scope, element) ->
     element.bind "dblclick", ->

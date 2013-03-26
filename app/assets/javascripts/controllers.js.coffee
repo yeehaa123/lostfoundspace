@@ -11,6 +11,10 @@
   $scope.saveCurrentSlide = (slide) ->
     console.log(slide.$update())
 
+  $scope.deleteCurrentSlide = (slide) ->
+    slide.$delete()
+    $scope.slides = _.without($scope.slides, slide)
+
 @SlideDetailCtrl = ($scope, $routeParams, Slide) ->
   $scope.slide = Slide.get(id: + $routeParams.slideId + '.json')
   $scope.saveSlide = ->
