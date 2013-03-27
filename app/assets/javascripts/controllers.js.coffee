@@ -9,11 +9,28 @@
       slide.currentSlide = "current"
   
   $scope.saveCurrentSlide = (slide) ->
-    console.log(slide.$update())
+    slide.$update()
 
   $scope.deleteCurrentSlide = (slide) ->
-    slide.$delete()
-    $scope.slides = _.without($scope.slides, slide)
+    slide.$delete slide, 
+      (success)->
+        $scope.slides = _.without($scope.slides, slide)
+      (error) ->
+        alert "fail"
+
+  $scope.createNewSlide = () ->
+    newSlide =  new Slide {
+      title: "New Slide"
+      subtitle: "New Subtitle"
+      content: "New Content"
+    }
+    newSlide.$save()
+    $scope.slides.push(newSlide)
+
+  $scope.test = () ->
+    console.log $scope.slides
+    newLeft = (parseInt $('#slides').css('left')) - 500
+    # $('#slides').animate({'left': newLeft})
 
 @SlideDetailCtrl = ($scope, $routeParams, Slide) ->
   $scope.slide = Slide.get(id: + $routeParams.slideId + '.json')

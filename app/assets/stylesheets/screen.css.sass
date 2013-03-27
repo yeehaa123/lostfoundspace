@@ -25,19 +25,24 @@ slides, .sidebar
 .sidebar
   display: none
 
-slide
+slide, #new-slide
+  background-color: #099C9B
   display: inline-block
   position: relative
   float: left
   margin: 10px 
   top: 144px
-  background-color: #099C9B
   padding: 0px 15px
   width: 450px
   height: 300px
   +border-radius(10px)
   +box-shadow(5px 5px 5px #2E2E2E)
   +opacity(0.5)
+
+#new-slide:hover
+
+slide
+  background-color: #099C9B
 
   h1
     font-size: 16px
@@ -96,6 +101,12 @@ slide
       top: 40%
       bottom: 40%
 
+  &.hideContent
+    *
+      display: none
+    a,i
+      display: block
+    
   &.solo
     height: 600px
     width: 800px

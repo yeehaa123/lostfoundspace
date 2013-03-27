@@ -17,7 +17,6 @@ app.config ($routeProvider) ->
     
       redirectTo: "/slides"
 
-
 services = angular.module('lfServices', ['ngResource', 'ngSanitize'])
 
 services.factory "Slide", ($resource) ->
@@ -25,13 +24,13 @@ services.factory "Slide", ($resource) ->
 
 app.directive "slides", ->
   restrict: 'E'
+  transclude: true
   templateUrl: 'assets/slides.html'
 
   link: (scope, element) ->
     element.bind "dblclick", ->
       newLeft = parseInt(element.css('left')) - 500
       element.animate({'left': newLeft})
-      scope.nextSlide()
 
 app.directive "slide", ->
   restrict: 'E'
@@ -39,8 +38,11 @@ app.directive "slide", ->
   
   link: (scope, element) ->
     element.addClass('large') if scope.slide.content.length < 150
+    if scope.slide.image_url
+      element.css('background-image', "url(#{scope.slide.image_url})")
+      element.addClass('hideContent')
 
-    # element.bind "mouseenter", ->
-    #   element.toggleClass('current')
-    # element.bind "mouseleave", ->
-    #   element.toggleClass('current')
+    element.bind "mouseenter", ->
+      element.toggleClass('current')
+    element.bind "mouseleave", ->
+      element.toggleClass('current')

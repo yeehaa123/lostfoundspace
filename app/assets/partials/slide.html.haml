@@ -1,14 +1,15 @@
-%a.edit-button{href: "#myModal", "data-toggle" => "modal"}
+%a.edit-button{href: "#edit-slide", "data-toggle" => "modal"}
   %i.icon-pencil
+
 %h1
-  %a{href:"#/slides/{{slide.id}}"} {{ slide.title }}
+  %a{href:"#/slides/{{slide.id}}"} {{ slide.title | lowercase }}
 
 %h2
-  {{ slide.subtitle }}
+  {{ slide.subtitle | lowercase }}
 
 %div.content
   %p{"ng-bind-html" => "slide.content"}
-
+  
   %textarea{type:"text", "ng-model" => "slide.content"}
 
 

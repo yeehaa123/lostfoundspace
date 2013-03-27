@@ -1,1 +1,3 @@
-%slide{'ng-repeat' => 'slide in slides', 'ng-click' => "setCurrentSlide(slide)", 'class' => '{{ slide.currentSlide }}' }
+%slide{'ng-repeat' => 'slide in slides', 'ng-click' => "setCurrentSlide(slide)"}
+
+%button#new-slide.btn{'ng-click' => 'createNewSlide()'} Add New Slide
