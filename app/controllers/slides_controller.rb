@@ -2,6 +2,7 @@ class SlidesController < ApplicationController
   respond_to :json
 
   def index
+    # respond_with Slide.where(:image_url)
     respond_with Slide.all
   end
 

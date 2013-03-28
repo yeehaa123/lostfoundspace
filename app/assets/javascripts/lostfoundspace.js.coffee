@@ -41,8 +41,20 @@ app.directive "slide", ->
     if scope.slide.image_url
       element.css('background-image', "url(#{scope.slide.image_url})")
       element.addClass('hideContent')
+    else
+      # element.addClass('hideSlide')
 
-    element.bind "mouseenter", ->
-      element.toggleClass('current')
-    element.bind "mouseleave", ->
-      element.toggleClass('current')
+app.directive "buttons", ->
+  restrict: 'E'
+  templateUrl: 'assets/control-buttons.html'
+
+  link: (scope,element) ->
+    $('.backward-btn').bind "click", ->
+      slidesElement = $(document).find('slides').first()
+      newLeft = parseInt(slidesElement.css('left')) + 500
+      slidesElement.animate({'left': newLeft})
+
+    $('.forward-btn').bind "click", ->
+      slidesElement = $(document).find('slides').first()
+      newLeft = parseInt(slidesElement.css('left')) - 500
+      slidesElement.animate({'left': newLeft})

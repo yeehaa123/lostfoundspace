@@ -1,5 +1,6 @@
 %slides{'ng-controller' => 'SlideListCtrl' }
 
+%buttons
 
 %div#edit-slide.modal.hide.fade{tabindex: "-1", role: "dialog", "data-backdrop" => "true"}
   %div.modal-header
@@ -10,5 +11,7 @@
   %div.modal-body
     %textarea{type:"text", "ng-model" => "currentSlide.content"}
     %a.btn.update-btn{ "ng-click" => "saveCurrentSlide(currentSlide)", "data-dismiss" => "modal" } Update
-    %a.btn.update-btn{ "ng-click" => "deleteCurrentSlide(currentSlide)", "data-dismiss" => "modal" } Delete 
+    %a.btn.delete-btn{ "ng-click" => "deleteCurrentSlide(currentSlide)", "data-dismiss" => "modal" } Delete 
     %a.btn.cancel-btn{ type: "button", "data-dismiss" => "modal" } Cancel
+
+

@@ -27,11 +27,6 @@
     newSlide.$save()
     $scope.slides.push(newSlide)
 
-  $scope.test = () ->
-    console.log $scope.slides
-    newLeft = (parseInt $('#slides').css('left')) - 500
-    # $('#slides').animate({'left': newLeft})
-
 @SlideDetailCtrl = ($scope, $routeParams, Slide) ->
   $scope.slide = Slide.get(id: + $routeParams.slideId + '.json')
   $scope.saveSlide = ->

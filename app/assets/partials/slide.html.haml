@@ -1,5 +1,5 @@
 %a.edit-button{href: "#edit-slide", "data-toggle" => "modal"}
-  %i.icon-pencil
+  %i.icon-pencil.icon-white
 
 %h1
   %a{href:"#/slides/{{slide.id}}"} {{ slide.title | lowercase }}
@@ -11,5 +11,4 @@
   %p{"ng-bind-html" => "slide.content"}
   
   %textarea{type:"text", "ng-model" => "slide.content"}
-
 
