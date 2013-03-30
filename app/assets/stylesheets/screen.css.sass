@@ -1,8 +1,8 @@
 $column-gutter: 1em
-$textColor: #2e2e2e 
 $inverseColor: #e2e2e2
-$bodyBackground: #676767
 $slideColor: #099C9B
+$bodyBackground: grayscale($slideColor) 
+$textColor: #2e2e2e 
 $navbarInverseBackground: $textColor
 $navbarInverseBrandColor: $inverseColor
 
@@ -19,12 +19,22 @@ body
   font-family: "museo-sans-1","museo-sans-2"
   position: relative
   width: 1024px
-  height: 748px
+  height: 768px
   overflow: hidden
 
 .container
   position: relative
   margin: 0
+
+h1
+  font-size: 30px
+  margin: 0.4em
+
+  a
+    +unstyled-link
+    &:hover
+      +unstyled-link
+      color: yellow
 
 slides
   display: block
@@ -33,27 +43,67 @@ slides
   width: 7000px
   height: 7000px
   left: 262px
-  top: 93.5px 
+  top: 118px
+  overflow: visible
+
+slides#matrix
+  width: 1024px
+  left: 10px
+  top: 0
+
+  slide
+    &:nth-child(3)
+      +rotate(180deg)
+        
+    &:nth-child(4)
+      +rotate(-180deg)
+  
+    &.current
+      +scale(1.0)
+      
+      &:nth-child(1)
+        +transform(rotate(325deg))
+        
+      &:nth-child(2)
+        +transform(rotate(-325deg))
+
+      &:nth-child(3)
+        +transform(rotate(-145deg))
+        
+      &:nth-child(4)
+        +transform(rotate(145deg))
 
 slide, #new-slide
+  +transition-property('all')
+  +transition-duration(0.5s)
   display: inline-block
   position: relative
   float: left
   margin: 10px 
   padding: 0px 15px
-  width: 450px
-  height: 355px
+  $width: 450px
+  width: $width
+  height: $width * 0.788888889
   +border-radius(10px)
   +box-shadow(5px 5px 5px #2E2E2E)
-  +opacity(0.5)
+  +opacity(0.3)
 
   &:hover
-    +opacity(0.9)
+    +opacity(1.0)
+    z-index: 9
+
+  &.current
+    +opacity(1.0)
+    +transform(scale(1.6))
+    z-index: 10
+
+#new-slide
+  display: none
 
 buttons
   position: absolute
   display: block
-  top: 558px
+  top: 688px
   width: 1024px
 
   .forward-btn
@@ -63,6 +113,7 @@ buttons
   .backward-btn
     display: inline-block
     float: left 
+
 slide
   background-color: $slideColor 
 
@@ -70,6 +121,7 @@ slide
     font-size: 16px
     margin-top: 10px
     font-weight: 700
+    color: inverse($slideColor)
 
   h2
     color: $inverseColor 
@@ -83,6 +135,7 @@ slide
     top: 70%
     width: 90%
     height: 20%
+
   a
     +unstyled-link
 
@@ -96,7 +149,6 @@ slide
     position: absolute
     left: 95%
     bottom: 2%
-
 
   p
     font-size: 14px
@@ -128,21 +180,6 @@ slide
   &.hideSlide
     display: none
     
-  &.solo
-    height: 600px
-    width: 800px
-    padding: 1em 2em 1em 2em
-
-    h1 
-      font-size: 28px
-
-    h2
-      font-size: 20px
-      margin-bottom: 4em
-
-    p
-      font-size: 24px
-
 .modal
   input, textarea
     display: block

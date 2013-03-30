@@ -8,10 +8,9 @@ app.config ($routeProvider) ->
       templateUrl: "assets/slide-list.html"
       controller: "SlideListCtrl"
 
-    .when "/slides/:slideId",
-
-      templateUrl: "assets/slide-detail.html"
-      controller: "SlideDetailCtrl"
+    .when "/matrix",
+      templateUrl: "assets/slide-matrix.html"
+      controller: "SlideListCtrl"
 
     .otherwise 
     
@@ -27,22 +26,25 @@ app.directive "slides", ->
   transclude: true
   templateUrl: 'assets/slides.html'
 
-  link: (scope, element) ->
-    element.bind "dblclick", ->
-      newLeft = parseInt(element.css('left')) - 500
-      element.animate({'left': newLeft})
-
 app.directive "slide", ->
   restrict: 'E'
   templateUrl: 'assets/slide.html'
   
-  link: (scope, element) ->
+  link: (scope, element, attrs) ->
     element.addClass('large') if scope.slide.content.length < 150
+
     if scope.slide.image_url
       element.css('background-image', "url(#{scope.slide.image_url})")
       element.addClass('hideContent')
     else
-      # element.addClass('hideSlide')
+      element.addClass('hideSlide')
+      
+    element.bind "click", ->
+      if element.hasClass('current')
+        element.removeClass('current')
+      else
+        $('slide').removeClass('current')
+        element.addClass('current')
 
 app.directive "buttons", ->
   restrict: 'E'

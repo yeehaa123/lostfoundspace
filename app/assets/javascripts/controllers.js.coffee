@@ -1,5 +1,11 @@
 @SlideListCtrl = ($scope, Slide) ->
-  $scope.slides = Slide.query()
+  Slide.query {}, (slides)->
+    $scope.slides = slides
+    $scope.imageSlides = _.filter slides, (slide) ->
+      slide if slide.image_url
+    $scope.textSlides = _.filter slides, (slide) ->
+      slide if slide.image_url
+
   $scope.orderProp = 'age'
   
   $scope.setCurrentSlide = (slide) ->
@@ -26,8 +32,3 @@
     }
     newSlide.$save()
     $scope.slides.push(newSlide)
-
-@SlideDetailCtrl = ($scope, $routeParams, Slide) ->
-  $scope.slide = Slide.get(id: + $routeParams.slideId + '.json')
-  $scope.saveSlide = ->
-    console.log(@slide.$update())
