@@ -25,8 +25,8 @@ slides.html: slides-cebc4d41e13a570b48a9a6ebd1ec1cf8.html
 slides/index.html: slides-cebc4d41e13a570b48a9a6ebd1ec1cf8.html
 textslides.html: textslides-a4dbf9555bb707fb8b8479896050a43a.html
 textslides/index.html: textslides-a4dbf9555bb707fb8b8479896050a43a.html
-application.css: application-7d352a8b124365421b02306b0953884a.css
-application/index.css: application-7d352a8b124365421b02306b0953884a.css
+application.css: application-4044ca747023292cd3af80db047d18dc.css
+application/index.css: application-4044ca747023292cd3af80db047d18dc.css
 jquery.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
 jquery/index.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
 FontAwesome.otf: FontAwesome-468f83b63df32064983141584a19ff17.otf
