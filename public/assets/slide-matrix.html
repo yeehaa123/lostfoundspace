@@ -1,0 +1,14 @@
+<slides id='matrix' ng-controller='SlideListCtrl'></slides>
+<div class='modal hide fade' data-backdrop='true' id='edit-slide' role='dialog' tabindex='-1'>
+  <div class='modal-header'>
+    <input ng-model='currentSlide.title' type='text'>
+    <input ng-model='currentSlide.subtitle' type='text'>
+    <input ng-model='currentSlide.image_url' type='text'>
+  </div>
+  <div class='modal-body'>
+    <textarea ng-model='currentSlide.content' type='text'></textarea>
+    <a class='btn update-btn' data-dismiss='modal' ng-click='saveCurrentSlide(currentSlide)'>Update</a>
+    <a class='btn delete-btn' data-dismiss='modal' ng-click='deleteCurrentSlide(currentSlide)'>Delete</a>
+    <a class='btn cancel-btn' data-dismiss='modal' type='button'>Cancel</a>
+  </div>
+</div>
