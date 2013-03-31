@@ -1,4 +1,4 @@
-@SlideListCtrl = ($scope, Slide) ->
+@SlideListCtrl = ["$scope", "Slide", ($scope, Slide) ->
   Slide.query {}, (slides)->
     $scope.slides = slides
     $scope.imageSlides = _.filter slides, (slide) ->
@@ -36,3 +36,4 @@
     }
     newSlide.$save()
     $scope.slides.push(newSlide)
+]

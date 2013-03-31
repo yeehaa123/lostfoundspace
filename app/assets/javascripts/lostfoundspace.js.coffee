@@ -1,6 +1,6 @@
 app = angular.module("lostfoundspace", ['lfServices'])
 
-app.config ($routeProvider) ->
+app.config ['$routeProvider', ($routeProvider) ->
 
   $routeProvider
     .when "/slides",
@@ -15,11 +15,13 @@ app.config ($routeProvider) ->
     .otherwise 
     
       redirectTo: "/slides"
+]
 
 services = angular.module('lfServices', ['ngResource', 'ngSanitize'])
 
-services.factory "Slide", ($resource) ->
+services.factory "Slide", ["$resource",($resource) ->
   $resource("slides/:id", {id: "@id"}, {update: {method: "PUT"}})
+]
 
 app.directive "slides", ->
   restrict: 'E'
