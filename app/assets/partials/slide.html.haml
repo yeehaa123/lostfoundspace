@@ -2,10 +2,10 @@
   %i.icon-pencil.icon-white
 
 %h1
-  %a{href:"#/slides/{{slide.id}}"} {{ slide.title | lowercase }}
+  %a{href:"#/slides/{{slide.id}}"} {{slide.title | lowercase}}
 
 %h2
-  {{ slide.subtitle | lowercase }}
+  {{slide.subtitle | lowercase}}
 
 %div.content
   %p{"ng-bind-html" => "slide.content"}

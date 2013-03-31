@@ -28,7 +28,8 @@ body
 
 h1
   font-size: 30px
-  margin: 0.4em
+  margin-top: 0.4em
+  margin-bottom: 0.4em
 
   a
     +unstyled-link
@@ -36,15 +37,34 @@ h1
       +unstyled-link
       color: yellow
 
-slides
+slides#images
   display: block
-  overflow: hidden
   position: relative
   width: 7000px
   height: 7000px
-  left: 262px
-  top: 118px
+  left: -128px
+  top: 117px
   overflow: visible
+
+textslides
+  display: block
+  position: absolute
+  width: 760px
+  height: 7000px
+  left: 372px
+  top: 171px
+  overflow: visible
+    
+  slide
+    +opacity(1.0)
+
+    @for $i from 1 to 6
+      &:nth-child(#{$i})
+        background-color: scale-lightness($slideColor, ($i - 1) * -10%)
+  
+  #newslide
+    display: block
+
 
 slides#matrix
   width: 1024px
@@ -73,6 +93,10 @@ slides#matrix
       &:nth-child(4)
         +transform(rotate(145deg))
 
+  #new-slide
+    display: none
+
+
 slide, #new-slide
   +transition-property('all')
   +transition-duration(0.5s)
@@ -97,9 +121,6 @@ slide, #new-slide
     +transform(scale(1.6))
     z-index: 10
 
-#new-slide
-  display: none
-
 buttons
   position: absolute
   display: block
@@ -119,7 +140,7 @@ slide
 
   h1
     font-size: 16px
-    margin-top: 10px
+    margin-top: 10px 
     font-weight: 700
     color: inverse($slideColor)
 

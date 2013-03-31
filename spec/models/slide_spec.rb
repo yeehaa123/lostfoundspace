@@ -11,4 +11,5 @@ describe Slide do
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:subtitle) }
   it { should validate_presence_of(:main_order) }
+  it { should validate_presence_of(:sub_order) }
 end

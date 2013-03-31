@@ -1,7 +1,9 @@
-%h1
+%h1{'ng-controller' => 'SlideListCtrl' }
   %a{href: '#matrix'}
     Lost and Found in Space
-%slides{'ng-controller' => 'SlideListCtrl' }
+
+%slides#images
+%textslides
 
 %buttons
 
@@ -10,6 +12,8 @@
     %input{type: "text", "ng-model" => "currentSlide.title"}
     %input{type: "text", "ng-model" => "currentSlide.subtitle"}
     %input{type: "text", "ng-model" => "currentSlide.image_url"}
+    %input{type: "number", "ng-model" => "currentSlide.main_order"}
+    %input{type: "number", "ng-model" => "currentSlide.sub_order"}
 
   %div.modal-body
     %textarea{type:"text", "ng-model" => "currentSlide.content"}

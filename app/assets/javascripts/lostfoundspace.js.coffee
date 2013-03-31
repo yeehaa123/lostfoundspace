@@ -26,6 +26,11 @@ app.directive "slides", ->
   transclude: true
   templateUrl: 'assets/slides.html'
 
+app.directive "textslides", ->
+  restrict: 'E'
+  transclude: true
+  templateUrl: 'assets/textslides.html'
+
 app.directive "slide", ->
   restrict: 'E'
   templateUrl: 'assets/slide.html'
@@ -36,8 +41,6 @@ app.directive "slide", ->
     if scope.slide.image_url
       element.css('background-image', "url(#{scope.slide.image_url})")
       element.addClass('hideContent')
-    else
-      element.addClass('hideSlide')
       
     element.bind "click", ->
       if element.hasClass('current')
@@ -60,3 +63,13 @@ app.directive "buttons", ->
       slidesElement = $(document).find('slides').first()
       newLeft = parseInt(slidesElement.css('left')) - 500
       slidesElement.animate({'left': newLeft})
+
+    $('.upward-btn').bind "click", ->
+      slidesElement = $(document).find('textslides').first()
+      newLeft = parseInt(slidesElement.css('top')) - 375
+      slidesElement.animate({'top': newLeft})
+
+    $('.downward-btn').bind "click", ->
+      slidesElement = $(document).find('textslides').first()
+      newLeft = parseInt(slidesElement.css('top')) + 375
+      slidesElement.animate({'top': newLeft})

@@ -4,9 +4,10 @@
     $scope.imageSlides = _.filter slides, (slide) ->
       slide if slide.image_url
     $scope.textSlides = _.filter slides, (slide) ->
-      slide if slide.image_url
+      slide if !slide.image_url
 
-  $scope.orderProp = 'age'
+  $scope.orderProp = 'main_order'
+  $scope.textSlideOrderProp = 'sub_order'
   
   $scope.setCurrentSlide = (slide) ->
     $scope.currentSlide = slide
@@ -15,6 +16,7 @@
       slide.currentSlide = "current"
   
   $scope.saveCurrentSlide = (slide) ->
+    console.log slide
     slide.$update()
 
   $scope.deleteCurrentSlide = (slide) ->
@@ -29,6 +31,8 @@
       title: "New Slide"
       subtitle: "New Subtitle"
       content: "New Content"
+      main_order: 99
+      sub_order: 99
     }
     newSlide.$save()
     $scope.slides.push(newSlide)

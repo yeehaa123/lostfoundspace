@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130327210940) do
+ActiveRecord::Schema.define(:version => 20130331153653) do
 
   create_table "slides", :force => true do |t|
     t.string   "title"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20130327210940) do
     t.datetime "updated_at", :null => false
     t.string   "subtitle"
     t.string   "image_url"
+    t.integer  "main_order"
+    t.integer  "sub_order"
   end
 
 end
