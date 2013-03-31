@@ -18,7 +18,6 @@ html
   font-family: "museo-sans-1","museo-sans-2"
 
 body
-  font-family: "museo-sans-1","museo-sans-2"
   position: relative
   width: 1024px
   height: 768px
@@ -28,16 +27,17 @@ body
   position: relative
   margin: 0
 
-  h1
-    font-size: 30px
-    margin-top: 0.4em
-    margin-bottom: 0.4em
+h1
+  font-family: "museo-sans-1","museo-sans-2"
+  font-size: 30px
+  margin-top: 0.4em
+  margin-bottom: 0.4em
 
-    a
+  a
+    +unstyled-link
+    &:hover
       +unstyled-link
-      &:hover
-        +unstyled-link
-        color: yellow
+      color: yellow
 
 slides#images
   font-family: "museo-sans-1","museo-sans-2"
