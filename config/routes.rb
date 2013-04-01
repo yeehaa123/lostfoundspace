@@ -1,5 +1,7 @@
 Lostfoundspace::Application.routes.draw do
-  resources :slides
+  resources :slides do
+    collection { post :import }
+  end
 
 
   root to: "lostfoundspace#index"

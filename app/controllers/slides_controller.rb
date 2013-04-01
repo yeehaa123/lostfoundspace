@@ -1,8 +1,13 @@
 class SlidesController < ApplicationController
-  respond_to :json
+  respond_to :json, :csv
 
   def index
-    respond_with Slide.all
+    @slides = Slide.scoped
+    respond_with do |format|
+      format.html
+      format.json { render text: @slides.to_json }
+      format.csv  { render text: @slides.to_csv }
+    end
   end
 
   def show
@@ -19,5 +24,10 @@ class SlidesController < ApplicationController
 
   def destroy
     respond_with Slide.destroy(params[:id])
+  end
+
+  def import
+    Slide.import(params[:file])
+    redirect_to root_url
   end
 end

@@ -1,0 +1,4 @@
+%h2 Import Slides
+= form_tag import_slides_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag "Import"

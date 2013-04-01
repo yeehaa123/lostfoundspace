@@ -66,8 +66,8 @@ textslides
       &:nth-child(#{$i})
         background-color: scale-lightness($slideColor, ($i - 1) * -10%)
   
-  #newslide
-    display: block
+#new-slide
+  display: none
 
 
 slides#matrix
@@ -101,7 +101,7 @@ slides#matrix
     display: none
 
 
-slide, #new-slide
+slide
   +transition-property('all')
   +transition-duration(0.5s)
   display: inline-block
