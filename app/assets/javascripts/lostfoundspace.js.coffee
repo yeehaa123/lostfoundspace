@@ -51,6 +51,13 @@ app.directive "slide", ->
         $('slide').removeClass('current')
         element.addClass('current')
 
+    element.find('.zoom-in-button').bind "click", ->
+      if element.hasClass('zoom')
+        element.removeClass('zoom')
+      else
+        $('slide').removeClass('zoom')
+        element.addClass('zoom')
+
 app.directive "buttons", ->
   restrict: 'E'
   templateUrl: 'assets/control-buttons.html'

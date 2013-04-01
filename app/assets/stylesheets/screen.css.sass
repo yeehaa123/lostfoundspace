@@ -17,6 +17,8 @@ html
 *
   font-family: "museo-sans-1","museo-sans-2"
 
+
+
 body
   position: relative
   width: 1024px
@@ -30,8 +32,7 @@ body
   h1#header
     font-family: "museo-sans-1","museo-sans-2"
     font-size: 30px
-    margin-top: 0.4em
-    margin-bottom: 0.4em
+    margin: 0.4em 0.2em
 
     a
       +unstyled-link
@@ -121,6 +122,10 @@ slide, #new-slide
 
   &.current
     +opacity(1.0)
+    z-index: 10
+  
+  &.zoom
+    +opacity(1.0)
     +transform(scale(1.6))
     z-index: 10
 
@@ -174,6 +179,10 @@ slide
     left: 95%
     bottom: 2%
 
+  .zoom-in-button
+    position: absolute
+    left: 2%
+    bottom: 2%
   p
     font-size: 14px
     text-align: center
@@ -205,6 +214,8 @@ slide
     display: none
     
 .modal
+  button.btn
+    font-family: "museo-sans-1","museo-sans-2"
   input, textarea
     display: block
     width: 97.5%
