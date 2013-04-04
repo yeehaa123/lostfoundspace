@@ -16,7 +16,6 @@
       slide.currentSlide = "current"
   
   $scope.saveCurrentSlide = (slide) ->
-    console.log slide
     slide.$update()
 
   $scope.deleteCurrentSlide = (slide) ->
@@ -35,5 +34,5 @@
       sub_order: 99
     }
     newSlide.$save()
-    $scope.slides.push(newSlide)
+    $scope.textSlides.push(newSlide)
 ]
