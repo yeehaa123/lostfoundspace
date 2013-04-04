@@ -3,7 +3,8 @@
     Lost and Found in Space
 
 %slides#images
-%textslides
+%div#textSlides
+  %textslides{'ng-repeat' => 'textSlides in textSlidesArray', class: 'mo_{{$index}}'}
 
 %buttons
 

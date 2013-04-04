@@ -64,21 +64,21 @@ app.directive "buttons", ->
 
   link: (scope,element) ->
     $('.backward-btn').bind "click", ->
-      slidesElement = $(document).find('slides').first()
+      slidesElement = $(document).find('slides')
       newLeft = parseInt(slidesElement.css('left')) + 500
       slidesElement.animate({'left': newLeft})
 
     $('.forward-btn').bind "click", ->
-      slidesElement = $(document).find('slides').first()
+      slidesElement = $(document).find('slides')
       newLeft = parseInt(slidesElement.css('left')) - 500
       slidesElement.animate({'left': newLeft})
 
     $('.upward-btn').bind "click", ->
-      slidesElement = $(document).find('textslides').first()
+      slidesElement = $(document).find('#textSlides')
       newLeft = parseInt(slidesElement.css('top')) - 375
       slidesElement.animate({'top': newLeft})
 
     $('.downward-btn').bind "click", ->
-      slidesElement = $(document).find('textslides').first()
+      slidesElement = $(document).find('#textSlides')
       newLeft = parseInt(slidesElement.css('top')) + 375
       slidesElement.animate({'top': newLeft})

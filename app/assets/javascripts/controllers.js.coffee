@@ -3,8 +3,12 @@
     $scope.slides = slides
     $scope.imageSlides = _.filter slides, (slide) ->
       slide if slide.image_url
-    $scope.textSlides = _.filter slides, (slide) ->
-      slide if !slide.image_url
+    $scope.textSlides1 = _.filter slides, (slide) ->
+      slide if !slide.image_url and slide.main_order is 1
+    $scope.textSlides2 = _.filter slides, (slide) ->
+      slide if !slide.image_url and slide.main_order is 2
+    $scope.textSlidesArray = [$scope.textSlides1, $scope.textSlides2]
+
 
   $scope.orderProp = 'main_order'
   $scope.textSlideOrderProp = 'sub_order'

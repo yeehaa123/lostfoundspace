@@ -50,7 +50,7 @@ slides#images
   top: 117px
   overflow: visible
 
-textslides
+#textSlides
   display: block
   position: absolute
   width: 760px
@@ -58,14 +58,13 @@ textslides
   left: 372px
   top: 171px
   overflow: visible
-    
+
   slide
     +opacity(1.0)
 
     @for $i from 1 to 6
       &:nth-child(#{$i})
         background-color: scale-lightness($slideColor, ($i - 1) * -10%)
-  
 
 slides#matrix
   width: 1024px
@@ -94,11 +93,11 @@ slides#matrix
       &:nth-child(4)
         +transform(rotate(145deg))
 
-  #new-slide
-    display: none
+#new-slide
+  display: none
 
 
-slide, #new-slide
+slide
   +transition-property('all')
   +transition-duration(0.5s)
   display: inline-block
