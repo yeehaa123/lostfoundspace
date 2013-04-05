@@ -38,7 +38,7 @@ app.directive "slide", ->
   templateUrl: 'assets/slide.html'
   
   link: (scope, element, attrs) ->
-    element.addClass('large') if scope.slide.content.length < 150
+    element.addClass('large') if scope.slide.content.length < 200
 
     if scope.slide.image_url
       element.css('background-image', "url(#{scope.slide.image_url})")
@@ -50,6 +50,11 @@ app.directive "slide", ->
       else
         $('slide').removeClass('current')
         element.addClass('current')
+
+    element.bind "dblclick", ->
+      if element.hasClass('hideContent')
+        element.removeClass('hideContent')
+        element.css('background-image', "")
 
     element.find('.zoom-in-button').bind "click", ->
       if element.hasClass('zoom')
