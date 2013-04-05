@@ -39,8 +39,8 @@ slides.html: slides-f7cee645064b968e68bb900a553bb609.html
 slides/index.html: slides-f7cee645064b968e68bb900a553bb609.html
 textslides.html: textslides-15367d185296abffb9d88f86c1415465.html
 textslides/index.html: textslides-15367d185296abffb9d88f86c1415465.html
-application.css: application-21845bd244ebf63142e282ba73ab427a.css
-application/index.css: application-21845bd244ebf63142e282ba73ab427a.css
+application.css: application-36116ec9da9cc38abe5a5966e7e93879.css
+application/index.css: application-36116ec9da9cc38abe5a5966e7e93879.css
 jquery.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
 jquery/index.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
 FontAwesome.otf: FontAwesome-468f83b63df32064983141584a19ff17.otf
