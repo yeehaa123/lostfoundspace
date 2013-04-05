@@ -55,6 +55,10 @@ app.directive "slide", ->
       if element.hasClass('hideContent')
         element.removeClass('hideContent')
         element.css('background-image', "")
+      else if scope.slide.image_url
+        element.css('background-image', "url(#{scope.slide.image_url})")
+        element.addClass('hideContent')
+
 
     element.find('.zoom-in-button').bind "click", ->
       if element.hasClass('zoom')
