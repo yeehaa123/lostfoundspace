@@ -1,16 +1,24 @@
 ---
 artis-planetarium-camel.png: artis-planetarium-camel-8daf5d0e04cd1334486bd85d85d540ed.png
 artis-planetarium-camel/index.png: artis-planetarium-camel-8daf5d0e04cd1334486bd85d85d540ed.png
+artis-planetarium-museum-night.png: artis-planetarium-museum-night-ef4845df407e124d8c79d75b7c5ceee4.png
+artis-planetarium-museum-night/index.png: artis-planetarium-museum-night-ef4845df407e124d8c79d75b7c5ceee4.png
 artis_planetarium.png: artis_planetarium-0241944b20673cd4d8e687ae9bc67845.png
 artis_planetarium/index.png: artis_planetarium-0241944b20673cd4d8e687ae9bc67845.png
 berliner_planetarium.png: berliner_planetarium-f2761e3be088ba5b8fd6112760ffefa4.png
 berliner_planetarium/index.png: berliner_planetarium-f2761e3be088ba5b8fd6112760ffefa4.png
+black.png: black-f480b158f3d59e0f06cd420e5c6ae06e.png
+black/index.png: black-f480b158f3d59e0f06cd420e5c6ae06e.png
 celestial_map.png: celestial_map-e31f04e5df789b9262a8a3673be2dd58.png
 celestial_map/index.png: celestial_map-e31f04e5df789b9262a8a3673be2dd58.png
+digital-planetarium-projector.png: digital-planetarium-projector-631989075278ddb2488cc1e943b02591.png
+digital-planetarium-projector/index.png: digital-planetarium-projector-631989075278ddb2488cc1e943b02591.png
 franeker_planetarium.png: franeker_planetarium-89d0860dd6d0ba86a0182855ebd80b90.png
 franeker_planetarium/index.png: franeker_planetarium-89d0860dd6d0ba86a0182855ebd80b90.png
 modern_planetarium.png: modern_planetarium-c4e04779af83482f7e0ca3d045df8cb3.png
 modern_planetarium/index.png: modern_planetarium-c4e04779af83482f7e0ca3d045df8cb3.png
+noise.png: noise-46c1c7b702c6e20428687798dc8f2845.png
+noise/index.png: noise-46c1c7b702c6e20428687798dc8f2845.png
 planetarium_drawing.png: planetarium_drawing-9501f2b0d3a89261e3d6c22e02aaab43.png
 planetarium_drawing/index.png: planetarium_drawing-9501f2b0d3a89261e3d6c22e02aaab43.png
 rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
@@ -31,8 +39,8 @@ slides.html: slides-f7cee645064b968e68bb900a553bb609.html
 slides/index.html: slides-f7cee645064b968e68bb900a553bb609.html
 textslides.html: textslides-15367d185296abffb9d88f86c1415465.html
 textslides/index.html: textslides-15367d185296abffb9d88f86c1415465.html
-application.css: application-ae300f097d01e958944ab5b445edcb24.css
-application/index.css: application-ae300f097d01e958944ab5b445edcb24.css
+application.css: application-00e52b5a44687988f03e49387bd9cb91.css
+application/index.css: application-00e52b5a44687988f03e49387bd9cb91.css
 jquery.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
 jquery/index.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
 FontAwesome.otf: FontAwesome-468f83b63df32064983141584a19ff17.otf
